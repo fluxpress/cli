@@ -1,0 +1,59 @@
+{
+  "name": "@fluxpress/cli",
+  "version": "0.1.0-alpha",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "type": "module",
+  "bin": {
+    "fluxpress": "bin/fluxpress.js"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/eslint__js": "^8.42.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.5.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "rollup": "^4.21.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "files": [
+    "bin/",
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluxpress/cli.git"
+  },
+  "keywords": [
+    "fluxpress",
+    "@fluxpress/cli"
+  ],
+  "author": "liangpengyv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fluxpress/cli/issues"
+  },
+  "homepage": "https://github.com/fluxpress/cli#readme",
+  "description": "",
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}
