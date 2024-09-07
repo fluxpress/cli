@@ -28,6 +28,10 @@ lerna-debug.log*
 node_modules/
 out/
 dist/
+data/
+public/
 
 
 ### Others ###
+.env
+fluxpress.config.js

@@ -12,6 +12,9 @@
     "dev": "node scripts/dev.js",
     "build": "node scripts/build.js"
   },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@rollup/plugin-commonjs": "^26.0.1",
@@ -52,8 +55,5 @@
     "url": "https://github.com/fluxpress/cli/issues"
   },
   "homepage": "https://github.com/fluxpress/cli#readme",
-  "description": "",
-  "dependencies": {
-    "fs-extra": "^11.2.0"
-  }
+  "description": ""
 }
