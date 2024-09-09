@@ -1,6 +1,6 @@
 {
   "name": "@fluxpress/cli",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1-alpha",
   "engines": {
     "node": ">=20.9.0"
   },
