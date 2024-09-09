@@ -1,3 +1,14 @@
-import { version } from '../package.json'
+import { Command } from 'commander'
+import {
+  fetchCommand,
+  generateCommand,
+  previewCommand,
+} from './commands/index.js'
 
-console.log('@fluxpress/cli version:', version)
+const program = new Command()
+
+program
+  .addCommand(fetchCommand)
+  .addCommand(generateCommand)
+  .addCommand(previewCommand)
+  .parse()

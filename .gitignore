@@ -24,6 +24,10 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# yalc
+yalc.lock
+.yalc/
+
 # Dependency directories
 node_modules/
 out/
