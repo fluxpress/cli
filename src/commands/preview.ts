@@ -7,6 +7,6 @@ export const previewCommand = createCommand('preview').action(async () => {
   const port = 9895
   app.use(express.static(OUTPUT_PATH))
   app.listen(port, () => {
-    logger.info(`预览服务已启动，点击 http://localhost:${port}`)
+    logger.info(`预览服务已启动在：http://localhost:${port}`)
   })
 })

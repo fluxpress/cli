@@ -1,5 +1,5 @@
 import { createCommand } from 'commander'
-import { logger, readThemePath } from '@fluxpress/core'
+import { logger, OUTPUT_PATH, readThemePath } from '@fluxpress/core'
 import EventEmitter from 'events'
 import fs from 'fs-extra'
 import path from 'node:path'
@@ -13,16 +13,15 @@ export const generateCommand = createCommand('generate').action(async () => {
     return
   }
 
-  const eventsScriptsPath = path.join(themePath, 'scripts', 'events')
-  const files = await fs.readdir(eventsScriptsPath)
+  await fs.remove(OUTPUT_PATH)
 
   const fluxpress = new EventEmitter()
-
+  const eventsScriptsPath = path.join(themePath, 'scripts', 'events')
+  const files = await fs.readdir(eventsScriptsPath)
   for (const file of files) {
     if (file.endsWith('.js')) {
       ;(await import(path.join(eventsScriptsPath, file))).default(fluxpress)
     }
   }
-
   fluxpress.emit('generate')
 })
