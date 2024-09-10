@@ -1,17 +1,22 @@
 import { createCommand } from 'commander'
 import {
-  DATA_PATH__ISSUES,
-  fetchDataIssues,
+  fetch,
   saveDataAsFile,
   logger,
   DATA_PATH,
+  readFluxPressConfig,
 } from '@fluxpress/core'
 import fs from 'fs-extra'
+import path from 'node:path'
 
 export const fetchCommand = createCommand('fetch').action(async () => {
   await fs.remove(DATA_PATH)
 
-  const dataIssues = await fetchDataIssues()
-  await saveDataAsFile(DATA_PATH__ISSUES, dataIssues)
-  logger.info(`数据已保存到 ${DATA_PATH__ISSUES}`)
+  const fluxpressConfig = await readFluxPressConfig()
+  for (const need_data of fluxpressConfig.github.need_data) {
+    const data = await fetch(need_data)
+    const dataPath = path.join(DATA_PATH, `${need_data}.json`)
+    await saveDataAsFile(need_data, data)
+    logger.info(`${need_data} 数据已保存到 ${dataPath}`)
+  }
 })
