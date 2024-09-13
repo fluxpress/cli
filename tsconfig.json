@@ -13,5 +13,5 @@
     "outDir": "./out",
     "declaration": true
   },
-  "include": ["src/**/*", "fluxpress.config.js"]
+  "include": ["src/**/*"]
 }
