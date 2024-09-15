@@ -4,7 +4,7 @@ import {
   saveDataAsFile,
   logger,
   DATA_PATH,
-  readFluxPressConfig,
+  readFluxPressThemeConfig,
 } from '@fluxpress/core'
 import fs from 'fs-extra'
 import path from 'node:path'
@@ -12,8 +12,8 @@ import path from 'node:path'
 export const fetchCommand = createCommand('fetch').action(async () => {
   await fs.remove(DATA_PATH)
 
-  const fluxpressConfig = await readFluxPressConfig()
-  for (const need_data of fluxpressConfig.github.need_data) {
+  const themeConfig = await readFluxPressThemeConfig()
+  for (const need_data of themeConfig.need_data) {
     const data = await fetch(need_data)
     const dataPath = path.join(DATA_PATH, `${need_data}.json`)
     await saveDataAsFile(need_data, data)
